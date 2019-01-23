@@ -1,11 +1,11 @@
 # MMM-PIR-Sensor
-This an extension for the [MagicMirror](https://github.com/MichMich/MagicMirror). It can monitor a [PIR motion](http://www.amazon.com/2013newestseller-HC-SR501-Pyroelectric-Infrared-Detector/dp/B00FDPO9B8) sensor and put your mirror to sleep if nobody uses it by turning off HDMI output or by turning off the mirror via a relay.
+This an extension for the [MagicMirror](https://github.com/MichMich/MagicMirror). It can monitor a PIR motion sensor and put your mirror to sleep if nobody uses it by turning off HDMI output or by turning off the mirror via a relay.
 
 ## Installation
 1. Navigate into your MagicMirror's `modules` folder and execute `git clone https://github.com/paviro/MMM-PIR-Sensor.git`. A new folder will appear navigate into it.
 2. Execute `npm install` to install the node dependencies.
 3. Add your user (`pi`?) to the `gpio group` by executing `sudo usermod -a -G gpio pi`.
-4. Execute `sudo chmod u+s /opt/vc/bin/tvservice && sudo chmod u+s /bin/chvt` to allow turning on/off the hdmi output.
+4. Execute `sudo chmod u+s /opt/vc/bin/tvservice && sudo chmod u+s /bin/chvt` to allow turning on/off the HDMI output.
 5. Reboot your Pi.
 
 ## Using the module
@@ -120,14 +120,14 @@ The following properties can be configured:
 		<tr>
 			<td><code>powerSavingMessage</code></td>
 			<td>Message notification to display before to switch screen off<br>
-				<br><b>Default value:</b> <code>"Monitor will be turn Off by PIR module"</code>
+				<br><b>Default value:</b> <code>"Monitor will be turned Off by PIR module"</code>
 			</td>
 		</tr>
 	</tbody>
 </table>
 
 ## Developer Notes
-This module broadcasts a `USER_PRESENCE` notification with the payload beeing `true` or `false` you can use it to pause or disable your module.
+This module broadcasts a `USER_PRESENCE` notification with the payload being `true` or `false` you can use it to pause or disable your module.
 
 ## Dependencies
 - [wiring-pi](https://www.npmjs.com/package/wiring-pi) (installed via `npm install`)
